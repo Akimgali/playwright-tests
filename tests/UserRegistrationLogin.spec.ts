@@ -13,4 +13,4 @@ test('Регистрация и авторизация нового пользо
     await login.goto();
     await login.login(email, 'Password1!');
     await login.expectSuccess();
-});
+}); ///Comment here bro
