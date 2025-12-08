@@ -17,5 +17,5 @@ export class LoginPage {
   async expectError(){
     const response = await this.page.waitForResponse(resp=>resp.url().includes('https://elf-api.rocketfirm.tech/admin/auth/login') && resp.status() === 401);
     expect(response.status()).toBe(401);
-  }
+  } //добавляю комментарий для того чтобы протестить
 }

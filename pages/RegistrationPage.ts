@@ -45,6 +45,6 @@ export class RegistrationPage {
   const userLink = this.page.getByRole('link', { name: email });
 
   // Проверяем, что он появился
-  await expect(userLink).toBeVisible({ timeout: 5000 });
+  await expect(userLink).toBeVisible({ timeout: 5000 }); // также коммент для того чтобы чекнуть
 }
 }
