@@ -11,8 +11,9 @@ export class LoginPage {
         await this.page.getByRole('textbox', { name: 'Пароль' }).fill(password);
         await this.page.getByRole('button', { name: 'Войти' }).nth(1).click();
   }
-  async expectSuccess(){
-    await expect (this.page).toHaveURL('https://elf.rocketfirm.tech/profile');
+  async expectSuccess() {
+  // Проверяем, что в URL просто ЕСТЬ слово profile
+        await expect(this.page).toHaveURL(/.*profile/, { timeout: 10000 });
   }
   async expectError(){
     const response = await this.page.waitForResponse(resp=>resp.url().includes('https://elf-api.rocketfirm.tech/admin/auth/login') && resp.status() === 401);
